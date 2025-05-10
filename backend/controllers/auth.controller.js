@@ -3,6 +3,7 @@ import User from "../models/user.model.js"
 import generateTokenAndSetCookie from "../utils/generateToken.js"
 
 export const signUp = async (req, res) => {
+	console.log("hlw");
 	try {
 		const { fullName, username, password, confirmPassword, gender } = req.body;
 
@@ -33,6 +34,7 @@ export const signUp = async (req, res) => {
 			gender,
 			profilePic: gender === "male" ? boyProfilePic : girlProfilePic,
 		});
+
 
 		if (newUser) {
 			// Generate JWT token here
