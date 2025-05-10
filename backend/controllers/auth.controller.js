@@ -1,6 +1,7 @@
 import bcrypt from "bcryptjs";
 import User from "../models/user.model.js"
 import generateTokenAndSetCookie from "../utils/generateToken.js"
+import { enabled } from "express/lib/application.js";
 
 export const signUp = async (req, res) => {
 	console.log("hlw");
@@ -57,6 +58,7 @@ export const signUp = async (req, res) => {
 };
 
 export const login = async (req, res) => {
+	console.log("hi i am login")
 	try {
 		const { username, password } = req.body;
 		const user = await User.findOne({ username });
