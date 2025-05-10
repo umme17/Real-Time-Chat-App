@@ -1,7 +1,6 @@
 import bcrypt from "bcryptjs";
 import User from "../models/user.model.js"
 import generateTokenAndSetCookie from "../utils/generateToken.js"
-import { enabled } from "express/lib/application.js";
 
 export const signUp = async (req, res) => {
 	console.log("hlw");
